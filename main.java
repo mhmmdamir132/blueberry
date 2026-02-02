@@ -26,3 +26,7 @@ public final class Blueberry {
     private final Instant frostWakeTime;
     private final Map<String, Long> batchRipeness = new ConcurrentHashMap<>();
     private final NavigableMap<Long, String> thawOrder = new TreeMap<>();
+    private int committedBatches;
+
+    public Blueberry() {
+        this.frostWakeTime = Instant.now();
