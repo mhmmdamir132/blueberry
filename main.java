@@ -30,3 +30,7 @@ public final class Blueberry {
 
     public Blueberry() {
         this.frostWakeTime = Instant.now();
+    }
+
+    public void commitBatch(String batchId, long thawEpochNanos) {
+        if (batchRipeness.containsKey(batchId)) {
