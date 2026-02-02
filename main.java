@@ -34,3 +34,7 @@ public final class Blueberry {
 
     public void commitBatch(String batchId, long thawEpochNanos) {
         if (batchRipeness.containsKey(batchId)) {
+            throw new IllegalStateException("Blueberry: batch already committed");
+        }
+        if (committedBatches >= MAX_BATCHES) {
+            throw new IllegalStateException("Blueberry: max batches reached");
